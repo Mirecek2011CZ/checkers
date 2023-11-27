@@ -1,0 +1,45 @@
+* {
+  margin: auto;
+}
+
+td {
+  width: 65px;
+  height: 65px;
+  text-align: center;
+  background-color: #663300;
+}
+
+table {
+  margin-top: 100px;
+  border: 3px solid black;
+}
+
+p {
+  display: inline-block;
+}
+
+span {
+  display: inline-block;
+}
+
+.noChecker {
+  background-color: #ffffcc;
+}
+
+.blackChecker {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50px;
+  padding: 12px;
+  background-color: black;
+}
+
+.whiteChecker {
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 50px;
+  padding: 12px;
+  background-color: white;
+}
