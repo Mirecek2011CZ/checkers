@@ -8,3 +8,10 @@ const playing_board = [
     null, 16, null, 17, null, 18, null, 19,
     20, null, 21, null, 22, null, 23, null
 ]
+
+let pieces = [];
+let tiles = [];
+
+let distance = function (x1, x2, y1, y2) {
+    return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+}
