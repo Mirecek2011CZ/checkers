@@ -8,4 +8,3 @@ const playing_board = [
     null, 16, null, 17, null, 18, null, 19,
     20, null, 21, null, 22, null, 23, null
 ]
-
