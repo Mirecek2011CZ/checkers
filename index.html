@@ -3,95 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Checkers</title>
     <link rel="stylesheet" href="./res/css/style.css">
     
 </head>
 <body>
     <body>
-        <table>
-            <tr>
-                <td class="noChecker"></td>
-                <td><p class="whiteChecker" id="0"></p></td>
-                <td class="noChecker"></td>
-                <td><p class="whiteChecker" id="1"></p></td>
-                <td class="noChecker"></td>
-                <td><p class="whiteChecker" id="2"></p></td>
-                <td class="noChecker"></td>
-                <td><p class="whiteChecker" id="3"></p></td>
-            </tr>
-            <tr>
-                <td><p class="whiteChecker" id="4"></p></td>
-                <td class="noChecker"></td>
-                <td><p class="whiteChecker" id="5"></p></td>
-                <td class="noChecker"></td>
-                <td><p class="whiteChecker" id="6"></p></td>
-                <td class="noChecker"></td>
-                <td><p class="whiteChecker" id="7"></p></td>
-                <td class="noChecker"></td>
-            </tr>
-            <tr>
-                <td class="noChecker"></td>
-                <td><p class="whiteChecker" id="8"></p></td>
-                <td class="noChecker"></td>
-                <td><p class="whiteChecker" id="9"></p></td>
-                <td class="noChecker"></td>
-                <td><p class="whiteChecker" id="10"></p></td>
-                <td class="noChecker"></td>
-                <td><p class="whiteChecker" id="11"></p></td>
-            </tr>    
-            <tr>
-                <td></td>
-                <td class="noChecker"></td>
-                <td></td>
-                <td class="noChecker"></td>
-                <td></td>
-                <td class="noChecker"></td>
-                <td></td>
-                <td class="noChecker"></td>
-            </tr>
-            <tr>
-                <td class="noChecker"></td>
-                <td></td>
-                <td class="noChecker"></td>
-                <td></td>
-                <td class="noChecker"></td>
-                <td></td>
-                <td class="noChecker"></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><span class="blackChecker" id="12"></span></td>
-                <td class="noChecker"></td>
-                <td><span class="blackChecker" id="13"></span></td>
-                <td class="noChecker"></td>
-                <td><span class="blackChecker" id="14"></span></td>
-                <td class="noChecker"></td>
-                <td><span class="blackChecker" id="15"></span></td>
-                <td class="noChecker"></td>
-            </tr>
-            <tr>
-                <td class="noChecker"></td>
-                <td><span class="blackChecker" id="16"></span></td>
-                <td class="noChecker"></td>
-                <td><span class="blackChecker" id="17"></span></td>
-                <td class="noChecker"></td>
-                <td><span class="blackChecker" id="18"></span></td>
-                <td class="noChecker"></td>
-                <td><span class="blackChecker" id="19"></span></td>
-            </tr>
-            <tr>
-                <td><span class="blackChecker" id="20"></span></td>
-                <td class="noChecker"></td>
-                <td><span class="blackChecker" id="21"></span></td>
-                <td class="noChecker"></td>
-                <td><span class="blackChecker" id="22"></span></td>
-                <td class="noChecker"></td>
-                <td><span class="blackChecker" id="23"></span></td>
-                <td class="noChecker"></td>
-            </tr>
+        <div style= "padding: 1px">
+            Player one card: <b id="p1card">12</b> || Player two card: <b id="p2card">12</b>
+            Turn: <b id="pturn">Any</b>
+        </div>
+    <div class="chessboard">
+
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
     
-        </table>
+
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+    
+
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+    
+
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+    
+
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+    
+
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+    
+
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white" >&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+    </div>
+    
     <script src="./res/js/main.js"></script>
-</body>
+     
+    </body>
 </html>
