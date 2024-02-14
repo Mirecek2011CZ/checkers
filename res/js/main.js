@@ -1,4 +1,4 @@
-let board = document.querySelector(".chessboard");
+let board = document.querySelector(".checkerboard");
 
 let player1 = "\u2659"; 
 let player2 = "\u2658"; 
@@ -34,7 +34,6 @@ board.addEventListener("click", function (event) {
     }
   }
 });
-
 
 function legalMove(from, to) {
   return to.innerHTML !== player1 && to.innerHTML !== player2 &&
@@ -81,7 +80,6 @@ function playerRules(sel, from, to) {
   }
   return flag;
 }
-
 
 function checkWinner(p1count, p2count) {
 
