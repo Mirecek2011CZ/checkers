@@ -28,3 +28,44 @@
 .white {
   background-color: #f9f6ee;
 }
+
+#rules {
+  text-align: center;
+  margin-top: 175px;
+  font-family: sans-serif;
+  font-size: 3em;
+}
+
+#menuBtn {
+  height: 50px;
+  width: 150px;
+  position: absolute;
+  top: 50px;
+  left: 46%;
+  background-color: rgb(78, 78, 78);
+  border-radius: 6px;
+  border: 0;
+  transition: all .2s ease-in-out;
+  color: white;
+  font-size: x-large;
+}
+#menuBtn:hover {
+  transform: scale(1.1);
+}
+
+#playBtn {
+  height: 50px;
+  width: 150px;
+  position: absolute;
+  top: 50px;
+  left: 46%;
+  background-color: rgb(78, 78, 78);
+  border-radius: 6px;
+  border: 0;
+  transition: all .2s ease-in-out;
+  color: white;
+  font-size: x-large;
+}
+#playBtn:hover {
+  transform: scale(1.1);
+}
