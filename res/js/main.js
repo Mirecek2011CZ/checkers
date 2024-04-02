@@ -67,6 +67,7 @@ function playerRules(sel, from, to) {
     if (flag) {
       console.log("Player 1's turn");
     }
+    
     if (flag && (moveDiff == -14 || moveDiff == -18)) {
       let dc = from + (moveDiff == -14 ? 7 : 9);
       flag = board.children[dc].innerHTML == player1;
