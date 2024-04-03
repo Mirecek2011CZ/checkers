@@ -33,7 +33,16 @@
   text-align: center;
   margin-top: 175px;
   font-family: sans-serif;
-  font-size: 3em;
+  font-size: 3.5em;
+  margin: 200px 0 100px 0;
+}
+
+#rule {
+  margin: 25px;
+  text-align: center;
+  font-size: 1.3em;
+  font-family: sans-serif;
+
 }
 
 #menuBtn {

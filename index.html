@@ -8,10 +8,12 @@
 </head>
 <body>
     <div id="Menu" style="display:none">
-        <h1 id="rules">Rules of the Checkers</h1>
-
-
-        <a href="#" onclick="return show('Game','Menu');"><button id="playBtn">Go play</button></a>
+        <h1 id="rules">Vysvětlení a pravidla hry</h1>
+        <p id="rule"><b>Pohyb figurek: </b>Hráči se střídají v pohybu svými figurkami diagonálně vpřed.</p>
+        <p id="rule"><b>Cíl:</b>Přeskočit všechny soupeřovy figurky nebo jim zabránit v pohybu.</p>
+        <p id="rule"><b>Remíza :</b>Může nastat pokud hráči nejsou schopni vyřadit všechny figurky.</p>
+        
+        <a href="#" onclick="return pages('Game','Menu');"><button id="playBtn">Play</button></a>
       </div>
 
       
@@ -96,7 +98,7 @@
             <div class="black"></div>
             <div class="white">&#9817;</div>
         </div>
-        <a href="#" onclick="return show('Menu','Game');"><button id="menuBtn">menu</button></a>
+        <a href="#" onclick="return pages('Menu','Game');"><button id="menuBtn">menu</button></a>
     </div>
     <script src="./res/js/main.js"></script>
      
