@@ -1,108 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Checkers</title>
-    <link rel="stylesheet" href="./res/css/style.css">
-    
-</head>
-<body>
-    <div id="Menu" style="display:none">
-        <h1 id="rules">Vysvětlení a pravidla hry</h1>
-        <p id="rule"><b>Pohyb figurek: </b>Hráči se střídají v pohybu svými figurkami diagonálně vpřed.</p>
-        <p id="rule"><b>První tah :</b>Prvním tahem začíná hráč v spodní části herní plochy.</p>
-        <p id="rule"><b>Cíl:</b>Přeskočit všechny soupeřovy figurky nebo jim zabránit v pohybu.</p>
-        <p id="rule"><b>Remíza :</b>Může nastat pokud hráči nejsou schopni vyřadit všechny figurky.</p>
-        
-        
-        <a href="#" onclick="return pages('Game','Menu');"><button id="playBtn">Play</button></a>
+    <link rel="stylesheet" href="./res/css/style.css" />
+  </head>
+  <body>
+    <div id="Menu" style="display: none">
+      <h1 id="rules">VYSVĚTLENÍ A PRAVIDLA HRY</h1>
+      <p id="rule">
+        <b>Pohyb figurek: </b>Hráči se střídají v pohybu svými figurkami
+        diagonálně vpřed.
+      </p>
+      <p id="rule">
+        <b>První tah: </b>Prvním tahem začíná hráč v spodní části herní plochy.
+      </p>
+      <p id="rule">
+        <b>Cíl: </b>Přeskočit všechny soupeřovy figurky nebo jim zabránit v
+        pohybu.
+      </p>
+      <p id="rule">
+        <b>Remíza: </b>Může nastat pokud hráči nejsou schopni vyřadit všechny
+        figurky.
+      </p>
+
+      <a href="#" onclick="return pages('Game','Menu');"
+        ><button id="playBtn">PLAY</button></a
+      >
+    </div>
+
+    <div id="Game">
+      <div class="checkerboard">
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+        <div class="white">&#9816;</div>
+        <div class="black"></div>
+
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+        <div class="black"></div>
+
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
+        <div class="black"></div>
+        <div class="white">&#9817;</div>
       </div>
 
-      
-    <div id="Game">
-        <div class="checkerboard">
+      <div id="winnerMsg"></div>
 
-            <div class="white">&#9816;</div>
-            <div class="black"></div>
-            <div class="white">&#9816;</div>
-            <div class="black"></div>
-            <div class="white">&#9816;</div>
-            <div class="black"></div>
-            <div class="white">&#9816;</div>
-            <div class="black"></div>
-        
-
-            <div class="black"></div>
-            <div class="white">&#9816;</div>
-            <div class="black"></div>
-            <div class="white">&#9816;</div>
-            <div class="black"></div>
-            <div class="white">&#9816;</div>
-            <div class="black"></div>
-            <div class="white">&#9816;</div>
-
-            <div class="white">&#9816;</div>
-            <div class="black"></div>
-            <div class="white">&#9816;</div>
-            <div class="black"></div>
-            <div class="white">&#9816;</div>
-            <div class="black"></div>
-            <div class="white">&#9816;</div>
-            <div class="black"></div>
-        
-
-            <div class="black"></div>
-            <div class="white"></div>
-            <div class="black"></div>
-            <div class="white"></div>
-            <div class="black"></div>
-            <div class="white"></div>
-            <div class="black"></div>
-            <div class="white"></div>
-        
-
-            <div class="white"></div>
-            <div class="black"></div>
-            <div class="white"></div>
-            <div class="black"></div>
-            <div class="white"></div>
-            <div class="black"></div>
-            <div class="white"></div>
-            <div class="black"></div>
-        
-
-            <div class="black"></div>
-            <div class="white">&#9817;</div>
-            <div class="black"></div>
-            <div class="white">&#9817;</div>
-            <div class="black"></div>
-            <div class="white">&#9817;</div>
-            <div class="black"></div>
-            <div class="white">&#9817;</div>
-        
-
-            <div class="white">&#9817;</div>
-            <div class="black"></div>
-            <div class="white">&#9817;</div>
-            <div class="black"></div>
-            <div class="white">&#9817;</div>
-            <div class="black"></div>
-            <div class="white">&#9817;</div>
-            <div class="black"></div>
-        
-
-            <div class="black"></div>
-            <div class="white">&#9817;</div>
-            <div class="black"></div>
-            <div class="white">&#9817;</div>
-            <div class="black"></div>
-            <div class="white" >&#9817;</div>
-            <div class="black"></div>
-            <div class="white">&#9817;</div>
-        </div>
-        <a href="#" onclick="return pages('Menu','Game');"><button id="menuBtn">Menu</button></a>
+      <a href="#" onclick="return pages('Menu','Game');"
+        ><button id="menuBtn">MENU</button></a
+      >
     </div>
     <script src="./res/js/main.js"></script>
-     
-    </body>
+  </body>
 </html>

@@ -15,7 +15,7 @@ console.log(board.children[3].innerHTML);
 board.addEventListener("click", function (event) {
   let target = event.target;
 
-  if (target.innerHTML === currentPlayer) { 
+  if (target.innerHTML === currentPlayer) {
     selected = target.innerHTML;
     from = target;
     index1 = [...board.children].indexOf(target);
@@ -23,9 +23,7 @@ board.addEventListener("click", function (event) {
     index2 = [...board.children].indexOf(target);
     if (playerRules(selected, index1, index2)) {
       let total = index1 - index2;
-      console.log(
-        `Player ${selected} from index ${index1} to index ${index2}, Difference: ${total}`
-      );
+      
 
       target.innerHTML = selected;
       from.innerHTML = "";
@@ -33,9 +31,8 @@ board.addEventListener("click", function (event) {
       index1 = -1;
       index2 = -1;
 
-      // Switches player after move
       currentPlayer = currentPlayer === player1 ? player2 : player1;
-      console.log(`It's now Player ${currentPlayer}'s turn.`);
+      console.log(`turn = ${currentPlayer}`);
     }
   }
 });
@@ -55,14 +52,13 @@ function playerRules(sel, from, to) {
   if (sel == player1) {
     flag = to < from;
     if (flag) {
-      console.log("Player 2's turn");
+      console.log("horni");
     }
     if (flag && (moveDiff == 14 || moveDiff == 18)) {
       let dc = from - (moveDiff == 14 ? 7 : 9);
       flag = board.children[dc].innerHTML == player2;
       if (flag) {
         player2total -= 1;
-        console.log(`Player 2's piece captured. Remaining: ${player2total}`);
         board.children[dc].innerHTML = "";
         checkWinner(player1total, player2total);
       }
@@ -70,7 +66,7 @@ function playerRules(sel, from, to) {
   } else if (sel == player2) {
     flag = to > from;
     if (flag) {
-      console.log("Player 1's turn");
+      console.log("dolni");
     }
 
     if (flag && (moveDiff == -14 || moveDiff == -18)) {
@@ -78,7 +74,6 @@ function playerRules(sel, from, to) {
       flag = board.children[dc].innerHTML == player1;
       if (flag) {
         player1total -= 1;
-        console.log(`Player 1's piece captured. Remaining: ${player1total}`);
         board.children[dc].innerHTML = "";
         checkWinner(player1total, player2total);
       }
@@ -89,16 +84,14 @@ function playerRules(sel, from, to) {
 
 function checkWinner(p1count, p2count) {
   if (p1count <= 0) {
-    if (confirm("Player 1 won the game! Do you want to restart the game?")) {
-    }
+    document.getElementById("winnerMsg").innerText = "Player 1 won the game!";
   } else if (p2count <= 0) {
-    if (confirm("Player 2 won the game! Do you want to restart the game?")) {
-    }
+    document.getElementById("winnerMsg").innerText = "Player 2 won the game!";
   }
 }
 
 function pages(shown, hidden) {
-  document.getElementById(shown).style.display='block';
-  document.getElementById(hidden).style.display='none';
+  document.getElementById(shown).style.display = "block";
+  document.getElementById(hidden).style.display = "none";
   return false;
 }
