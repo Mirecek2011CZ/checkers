@@ -8,13 +8,14 @@ let index1 = -1;
 let index2 = -1;
 let player1total = 12;
 let player2total = 12;
+let currentPlayer = player1;
 
 console.log(board.children[3].innerHTML);
 
 board.addEventListener("click", function (event) {
   let target = event.target;
 
-  if (target.innerHTML === player1 || target.innerHTML === player2) {
+  if (target.innerHTML === currentPlayer) { 
     selected = target.innerHTML;
     from = target;
     index1 = [...board.children].indexOf(target);
@@ -31,6 +32,10 @@ board.addEventListener("click", function (event) {
       from = null;
       index1 = -1;
       index2 = -1;
+
+      // Switches player after move
+      currentPlayer = currentPlayer === player1 ? player2 : player1;
+      console.log(`It's now Player ${currentPlayer}'s turn.`);
     }
   }
 });
