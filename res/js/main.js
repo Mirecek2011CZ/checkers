@@ -23,7 +23,6 @@ board.addEventListener("click", function (event) {
     index2 = [...board.children].indexOf(target);
     if (playerRules(selected, index1, index2)) {
       let total = index1 - index2;
-      
 
       target.innerHTML = selected;
       from.innerHTML = "";
