@@ -1,13 +1,15 @@
 * {
   user-select: none;
 }
+
 .checkerboard {
   width: 480px;
   height: 480px;
   margin: 1px;
   position: absolute;
-  top: 25%;
-  left: 37.5%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .black,
@@ -48,35 +50,44 @@
   height: 60px;
   width: 175px;
   position: absolute;
-  top: 50px;
-  left: 46%;
-  background-color: rgb(78, 78, 78);
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(133, 133, 133);
   border-radius: 6px;
   border: 0;
   transition: all 0.1s ease-in-out;
   color: white;
   font-size: xX-large;
 }
+
 #menuBtn:hover {
-  transform: scale(1.1);
+  transform: translateX(-50%);
+  background-color: rgb(78, 78, 78);
+  transition: 0.5s;
 }
 
 #playBtn {
   height: 60px;
   width: 175px;
   position: absolute;
-  top: 50px;
-  left: 46%;
-  background-color: rgb(78, 78, 78);
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(133, 133, 133);
   border-radius: 6px;
   border: 0;
   transition: all 0.1s ease-in-out;
   color: white;
   font-size: xX-large;
 }
+
 #playBtn:hover {
-  transform: scale(1.1);
+  transform: translateX(-50%);
+  background-color: rgb(78, 78, 78);
+  transition: 0.5s;
 }
+
 #winnerMsg {
   font-family: sans-serif;
   font-size: xx-large;

@@ -2,7 +2,6 @@ let board = document.querySelector(".checkerboard");
 
 let player1 = "\u2659";
 let player2 = "\u2658";
-
 let selected;
 let index1 = -1;
 let index2 = -1;
