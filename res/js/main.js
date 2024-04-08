@@ -30,7 +30,6 @@ board.addEventListener("click", function (event) {
       index2 = -1;
 
       currentPlayer = currentPlayer === player1 ? player2 : player1;
-      console.log(`turn = ${currentPlayer}`);
     }
   }
 });
@@ -94,13 +93,13 @@ function pages(shown, hidden) {
   return false;
 }
 
-function updateCounter(player2total, player1total) {
-  let player1Left = 12 - player2total;
-  let player2Left = 12 - player1total;
+function updateCounter() {
+  let player1Left = player1total - p1count;
+  let player2Left = player2total - p2count;
   if (player1Left || player2Left > 0) {
     document.getElementById("player1count").innerText = `player 1 has ${player1Left} pieces left`;
-    document.getElementById("player2count").innerText = `player 1 has ${player2Left} pieces left`;
-    console.log(player1Left);
-    console.log(player2Left);
+    document.getElementById("player2count").innerText = `player 2 has ${player2Left} pieces left`;
+    console.log(player2total);
+    console.log(player1total);
   }
 }
