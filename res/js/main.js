@@ -97,7 +97,7 @@ function pages(shown, hidden) {
 function updateCounter(player2total, player1total) {
   let player1Left = 12 - player2total;
   let player2Left = 12 - player1total;
-  if (player1Left || player2Left >= 0) {
+  if (player1Left || player2Left > 0) {
     document.getElementById("player1count").innerText = `player 1 has ${player1Left} pieces left`;
     document.getElementById("player2count").innerText = `player 1 has ${player2Left} pieces left`;
   }
