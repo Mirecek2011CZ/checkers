@@ -100,5 +100,7 @@ function updateCounter(player2total, player1total) {
   if (player1Left || player2Left > 0) {
     document.getElementById("player1count").innerText = `player 1 has ${player1Left} pieces left`;
     document.getElementById("player2count").innerText = `player 1 has ${player2Left} pieces left`;
+    console.log(player1Left);
+    console.log(player2Left);
   }
 }
