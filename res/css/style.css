@@ -91,7 +91,17 @@
   font-family: sans-serif;
   font-size: xx-large;
   position: absolute;
-  top: 85%;
-  left: 41.5%;
+  left: 50%;
+  transform: translateX(-50%);
   font-weight: bold;
 }
+
+#player1count, #player2count {
+  font-family: sans-serif;
+  font-size: xx-large;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
