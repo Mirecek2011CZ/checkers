@@ -1,5 +1,7 @@
 * {
   user-select: none;
+  font-family: monospace;
+
 }
 
 .checkerboard {
@@ -33,7 +35,6 @@
 
 #rules {
   text-align: center;
-  font-family: sans-serif;
   font-size: 3em;
   margin: 275px 0 100px 0;
 }
@@ -42,7 +43,6 @@
   margin: 25px;
   text-align: center;
   font-size: 1.3em;
-  font-family: sans-serif;
 }
 
 #menuBtn {
@@ -88,7 +88,6 @@
 }
 
 #winnerMsg {
-  font-family: sans-serif;
   font-size: xx-large;
   position: absolute;
   left: 50%;
@@ -97,14 +96,12 @@
 }
 
 #player1count {
-  font-family: sans-serif;
   position: absolute;
   top: 50%;
   left: 15%;
 }
 
 #player2count {
-  font-family: sans-serif;
   position: absolute;
   top: 50%;
   left: 85%;
