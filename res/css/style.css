@@ -49,7 +49,7 @@
   height: 60px;
   width: 175px;
   position: absolute;
-  top: 10%;
+  top: 6%;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgb(133, 133, 133);
@@ -70,7 +70,7 @@
   height: 60px;
   width: 175px;
   position: absolute;
-  top: 10%;
+  top: 6%;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgb(133, 133, 133);
@@ -97,12 +97,16 @@
 
 #player1count {
   position: absolute;
-  top: 50%;
-  left: 15%;
+  font-size: 1.4em;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #player2count {
   position: absolute;
-  top: 50%;
-  left: 85%;
+  font-size: 1.4em;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

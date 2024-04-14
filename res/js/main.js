@@ -58,6 +58,7 @@ function playerRules(sel, from, to) {
         player2total -= 1;
         board.children[dc].innerHTML = "";
         checkWinner(player1total, player2total);
+        updateCounter();
       }
     }
   } else if (sel == player2) {
@@ -73,6 +74,7 @@ function playerRules(sel, from, to) {
         player1total -= 1;
         board.children[dc].innerHTML = "";
         checkWinner(player1total, player2total);
+        updateCounter()
       }
     }
   }
@@ -93,9 +95,11 @@ function pages(shown, hidden) {
   return false;
 }
 
+window.addEventListener("load", updateCounter);
+
 function updateCounter() {
-  let player1Left = player1total - p1count;
-  let player2Left = player2total - p2count;
+  let player1Left = player1total;
+  let player2Left = player2total;
   if (player1Left || player2Left > 0) {
     document.getElementById("player1count").innerText = `player 1 has ${player1Left} pieces left`;
     document.getElementById("player2count").innerText = `player 2 has ${player2Left} pieces left`;
