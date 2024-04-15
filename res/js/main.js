@@ -74,7 +74,7 @@ function playerRules(sel, from, to) {
         player1total -= 1;
         board.children[dc].innerHTML = "";
         checkWinner(player1total, player2total);
-        updateCounter()
+        updateCounter();
       }
     }
   }
@@ -101,8 +101,8 @@ function updateCounter() {
   let player1Left = player1total;
   let player2Left = player2total;
   if (player1Left || player2Left > 0) {
-    document.getElementById("player1count").innerText = `player 1 has ${player1Left} pieces left`;
-    document.getElementById("player2count").innerText = `player 2 has ${player2Left} pieces left`;
+    document.getElementById("player1count").innerText = `Máš ${player1Left} zbývajících figurek`;
+    document.getElementById("player2count").innerText = `Máš ${player2Left} zbývajících figurek`;
     console.log(player2total);
     console.log(player1total);
   }

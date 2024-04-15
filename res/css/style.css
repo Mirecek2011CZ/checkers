@@ -1,6 +1,7 @@
 * {
   user-select: none;
   font-family: monospace;
+  box-sizing: border-box;
 
 }
 
@@ -42,7 +43,7 @@
 #rule {
   margin: 25px;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.4em;
 }
 
 #menuBtn {
@@ -55,13 +56,11 @@
   background-color: rgb(133, 133, 133);
   border-radius: 6px;
   border: 0;
-  transition: all 0.1s ease-in-out;
   color: white;
   font-size: xX-large;
 }
 
 #menuBtn:hover {
-  transform: translateX(-50%);
   background-color: rgb(78, 78, 78);
   transition: 0.5s;
 }
@@ -76,15 +75,14 @@
   background-color: rgb(133, 133, 133);
   border-radius: 6px;
   border: 0;
-  transition: all 0.1s ease-in-out;
   color: white;
   font-size: xX-large;
+
 }
 
 #playBtn:hover {
-  transform: translateX(-50%);
   background-color: rgb(78, 78, 78);
-  transition: 0.5s;
+  transition: 0.7s;
 }
 
 #winnerMsg {
