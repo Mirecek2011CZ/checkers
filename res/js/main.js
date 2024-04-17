@@ -5,14 +5,14 @@ let player2 = "\u26C2";
 let selected;
 let index1 = -1;
 let index2 = -1;
-let player1total = 12;
-let player2total = 12;
+let player1Total = 12;
+let player2Total = 12;
 let currentPlayer = player1;
 
 console.log(board.children[3].innerHTML);
 
-board.addEventListener("click", function (event) {
-  let target = event.target;
+board.addEventListener("click", function (e) {
+  let target = e.target;
 
   if (target.innerHTML === currentPlayer) {
     selected = target.innerHTML;
@@ -55,10 +55,10 @@ function playerRules(sel, from, to) {
       let dc = from - (moveDiff == 14 ? 7 : 9);
       flag = board.children[dc].innerHTML == player2;
       if (flag) {
-        player2total -= 1;
+        player2Total -= 1;
         board.children[dc].innerHTML = "";
-        checkWinner(player1total, player2total);
-        updateCounter();
+        checkWinner(player1Total, player2Total);
+        leftCheckersCounter();
       }
     }
   } else if (sel == player2) {
@@ -71,10 +71,10 @@ function playerRules(sel, from, to) {
       let dc = from + (moveDiff == -14 ? 7 : 9);
       flag = board.children[dc].innerHTML == player1;
       if (flag) {
-        player1total -= 1;
+        player1Total -= 1;
         board.children[dc].innerHTML = "";
-        checkWinner(player1total, player2total);
-        updateCounter();
+        checkWinner(player1Total, player2Total);
+        leftCheckersCounter();
       }
     }
   }
@@ -95,15 +95,15 @@ function pages(shown, hidden) {
   return false;
 }
 
-window.addEventListener("load", updateCounter);
+window.addEventListener("load", leftCheckersCounter);
 
-function updateCounter() {
-  let player1Left = player1total;
-  let player2Left = player2total;
+function leftCheckersCounter() {
+  let player1Left = player1Total;
+  let player2Left = player2Total;
   if (player1Left || player2Left > 0) {
     document.getElementById("player1count").innerText = `Máš ${player1Left} zbývajících figurek`;
     document.getElementById("player2count").innerText = `Máš ${player2Left} zbývajících figurek`;
-    console.log(player2total);
-    console.log(player1total);
+    console.log(player2Total);
+    console.log(player1Total);
   }
 }
