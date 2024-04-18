@@ -14,10 +14,16 @@ console.log(board.children[3].innerHTML);
 board.addEventListener("click", function (e) {
   let target = e.target;
 
+  let selectedPiece = document.querySelector(".selected");
+  if (selectedPiece) {
+    selectedPiece.classList.remove("selected");
+  }
+
   if (target.innerHTML === currentPlayer) {
     selected = target.innerHTML;
     from = target;
     index1 = [...board.children].indexOf(target);
+    target.classList.add("selected");
   } else if (from && legalMove(from, target)) {
     index2 = [...board.children].indexOf(target);
     if (playerRules(selected, index1, index2)) {
