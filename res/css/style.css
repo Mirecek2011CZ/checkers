@@ -87,6 +87,10 @@ body {
   text-align: center;
   border: 1px solid black;
   margin: auto;
+  line-height: 60px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .black {
