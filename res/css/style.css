@@ -98,7 +98,7 @@ body {
 }
 
 .white {
-  background-color: #4d2701;
+  background-color: #522b03;
 }
 
 #rules {
@@ -179,7 +179,7 @@ body {
 .selected {
   border: 3px solid white; 
   opacity: 0.9;
-  border-radius: 7px;
-  transform: scale(1.1);
+  border-radius: 10px;
+  transform: scale(1.15);
   transition: 150ms;
 }
