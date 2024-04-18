@@ -85,8 +85,8 @@ body {
   height: 60px;
   font-size: 50px;
   text-align: center;
-  box-sizing: border-box;
   border: 1px solid black;
+  margin: auto;
 }
 
 .black {
@@ -174,5 +174,8 @@ body {
 
 .selected {
   border: 3px solid white; 
-  background-color: #72481e;
+  opacity: 0.9;
+  border-radius: 7px;
+  transform: scale(1.1);
+  transition: 150ms;
 }
