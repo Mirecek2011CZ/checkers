@@ -68,7 +68,7 @@ body {
   font-style: italic;
 }
 
-.checkerboard {
+#checkerboard {
   width: 480px;
   height: 480px;
   margin: 1px;
@@ -87,7 +87,7 @@ body {
   text-align: center;
   border: 1px solid black;
   margin: auto;
-  line-height: 60px; 
+  line-height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,9 +175,8 @@ body {
   transform: translate(-50%, -50%);
 }
 
-
 .selected {
-  border: 3px solid white; 
+  border: 3px solid white;
   opacity: 0.9;
   border-radius: 10px;
   transform: scale(1.15);
