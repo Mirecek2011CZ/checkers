@@ -32,7 +32,6 @@ board.addEventListener("click", function (e) {
       target.innerHTML = selected;
       from.innerHTML = "";
       from = null;
-      index = [-1, -1];
       currentPlayer = currentPlayer === player1 ? player2 : player1;
     }
   }
