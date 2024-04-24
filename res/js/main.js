@@ -1,7 +1,6 @@
 window.addEventListener("load", leftCheckersCounter);
 
 let board = document.querySelector("#checkerboard");
-
 let player1 = "\u26C0";
 let player2 = "\u26C2";
 let selected;
@@ -45,10 +44,7 @@ function isLegalMove() {
     const jumpOverIndex = (index[0] + index[1]) / 2;
     const middlePieceHtml = board.children[jumpOverIndex].innerHTML;
     validatePlayer(jumpOverIndex);
-    isJumpValid =
-      currentPlayer === player1
-        ? middlePieceHtml === player2
-        : middlePieceHtml === player1;
+    isJumpValid = currentPlayer === player1 ? middlePieceHtml === player2 : middlePieceHtml === player1;
   }
 
   const isTargetValid =
