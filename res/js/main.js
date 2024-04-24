@@ -72,7 +72,6 @@ function checkWinner() {
     document.getElementById("winnerMsg").innerText = "Player 2 won the game!";
     document.getElementById("player1Count").style.display = "none";
     document.getElementById("player2Count").style.display = "none";
-
   } else if (playerTotal[1] <= 0) {
     document.getElementById("winnerMsg").innerText = "Player 1 won the game!";
     document.getElementById("player1Count").style.display = "none";
