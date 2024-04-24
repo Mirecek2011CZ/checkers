@@ -1,8 +1,8 @@
 window.addEventListener("load", leftCheckersCounter);
 
 let board = document.querySelector("#checkerboard");
-let player1 = "\u26C0";
-let player2 = "\u26C2";
+let player1 = "\u26C2";
+let player2 = "\u26C0";
 let selected;
 let index = [-1, -1];
 let playerTotal = [12, 12];
@@ -38,6 +38,8 @@ function isLegalMove() {
   const absDiff = Math.abs(index[0] - index[1]);
   const isDiagonalStep = absDiff / 9 === 1 || absDiff / 7 === 1;
   const isDiagonalJump = absDiff / 9 === 2 || absDiff / 7 === 2;
+  const direction = index[1] - index[0];
+  const isMovingForward = (currentPlayer === player1 && direction < 0) || (currentPlayer === player2 && direction > 0);
 
   let isJumpValid = false;
   if (isDiagonalJump) {
@@ -50,7 +52,7 @@ function isLegalMove() {
   const isTargetValid =
     target.innerHTML === "" && target.classList.contains("white");
 
-  return isTargetValid && (isDiagonalStep || (isDiagonalJump && isJumpValid));
+    return isMovingForward && isTargetValid && (isDiagonalStep || (isDiagonalJump && isJumpValid));
 }
 
 function validatePlayer(index) {
@@ -67,20 +69,21 @@ function validatePlayer(index) {
 
 function checkWinner() {
   if (playerTotal[0] <= 0) {
-    document.getElementById("winnerMsg").innerText = "Player 1 won the game!";
-  } else if (playerTotal[1] <= 0) {
     document.getElementById("winnerMsg").innerText = "Player 2 won the game!";
+    document.getElementById("player1Count").style.display = "none";
+    document.getElementById("player2Count").style.display = "none";
+
+  } else if (playerTotal[1] <= 0) {
+    document.getElementById("winnerMsg").innerText = "Player 1 won the game!";
+    document.getElementById("player1Count").style.display = "none";
+    document.getElementById("player2Count").style.display = "none";
   }
 }
 
 function leftCheckersCounter() {
-  if (playerTotal[0] || playerTotal[1] > 0) {
-    document.getElementById(
-      "player1count"
-    ).innerText = `Máš ${playerTotal[0]} zbývajících figurek`;
-    document.getElementById(
-      "player2count"
-    ).innerText = `Máš ${playerTotal[1]} zbývajících figurek`;
+  if (playerTotal[0] || playerTotal[1] >= 0) {
+    document.getElementById("player1Count").innerText = `Máš ${playerTotal[0]} zbývajících figurek`;
+    document.getElementById("player2Count").innerText = `Máš ${playerTotal[1]} zbývajících figurek`;
   }
 }
 
