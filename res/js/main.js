@@ -5,10 +5,8 @@ let board = document.querySelector("#checkerboard");
 let player1 = "\u26C0";
 let player2 = "\u26C2";
 let selected;
-let index1 = -1;
-let index2 = -1;
-let player1Total = 12;
-let player2Total = 12;
+let index = [-1, -1];
+let playerTotal = [12, 12];
 let currentPlayer = player1;
 let from;
 let target;
@@ -24,10 +22,10 @@ board.addEventListener("click", function (e) {
   if (target.innerHTML === currentPlayer) {
     selected = target.innerHTML;
     from = target;
-    index1 = [...board.children].indexOf(target);
+    index[0] = [...board.children].indexOf(target);
     target.classList.add("selected");
   } else {
-    index2 = [...board.children].indexOf(target);
+    index[1] = [...board.children].indexOf(target);
     if (from && isLegalMove(target)) {
       target.innerHTML = selected;
       from.innerHTML = "";
@@ -38,13 +36,13 @@ board.addEventListener("click", function (e) {
 });
 
 function isLegalMove() {
-  const absDiff = Math.abs(index1 - index2);
+  const absDiff = Math.abs(index[0] - index[1]);
   const isDiagonalStep = absDiff / 9 === 1 || absDiff / 7 === 1;
   const isDiagonalJump = absDiff / 9 === 2 || absDiff / 7 === 2;
 
   let isJumpValid = false;
   if (isDiagonalJump) {
-    const jumpOverIndex = (index1 + index2) / 2;
+    const jumpOverIndex = (index[0] + index[1]) / 2;
     const middlePieceHtml = board.children[jumpOverIndex].innerHTML;
     validatePlayer(jumpOverIndex);
     isJumpValid =
@@ -61,10 +59,10 @@ function isLegalMove() {
 
 function validatePlayer(index) {
   if (currentPlayer === player1) {
-    player2Total -= 1;
+    playerTotal[1] -= 1;
     board.children[index].innerHTML = "";
   } else {
-    player1Total -= 1;
+    playerTotal[0] -= 1;
     board.children[index].innerHTML = "";
   }
   checkWinner();
@@ -72,21 +70,21 @@ function validatePlayer(index) {
 }
 
 function checkWinner() {
-  if (player1Total <= 0) {
+  if (playerTotal[0] <= 0) {
     document.getElementById("winnerMsg").innerText = "Player 1 won the game!";
-  } else if (player2Total <= 0) {
+  } else if (playerTotal[1] <= 0) {
     document.getElementById("winnerMsg").innerText = "Player 2 won the game!";
   }
 }
 
 function leftCheckersCounter() {
-  if (player1Total || player2Total > 0) {
+  if (playerTotal[0] || playerTotal[1] > 0) {
     document.getElementById(
       "player1count"
-    ).innerText = `Máš ${player1Total} zbývajících figurek`;
+    ).innerText = `Máš ${playerTotal[0]} zbývajících figurek`;
     document.getElementById(
       "player2count"
-    ).innerText = `Máš ${player2Total} zbývajících figurek`;
+    ).innerText = `Máš ${playerTotal[1]} zbývajících figurek`;
   }
 }
 
