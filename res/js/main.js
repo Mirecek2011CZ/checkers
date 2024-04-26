@@ -25,10 +25,14 @@ board.addEventListener("click", function (e) {
     target.classList.add("selected");
   } else {
     index[1] = [...board.children].indexOf(target);
+    let previousPlayerTotal = [...playerTotal];
     if (from && isLegalMove(target)) {
       target.innerHTML = selected;
       from.innerHTML = "";
       from = null;
+      if (previousPlayerTotal[0] !== playerTotal[0] || previousPlayerTotal[1] !== playerTotal[1]) {
+        return; 
+      }
       currentPlayer = currentPlayer === player1 ? player2 : player1;
     }
   }
