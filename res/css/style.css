@@ -67,7 +67,7 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #d6d6d6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,7 +98,7 @@ body {
 }
 
 .black {
-  background-color: #d3cec2;
+  background-color: #b6b1a7;
 }
 
 .white {
