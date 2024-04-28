@@ -47,10 +47,13 @@ function isLegalMove() {
 
   let isJumpValid = false;
   if (isDiagonalJump) {
-    const jumpOverIndex = (index[0] + index[1]) / 2;
+    const jumpOverIndex = Math.floor((index[0] + index[1]) / 2);
     const middlePieceHtml = board.children[jumpOverIndex].innerHTML;
-    validatePlayer(jumpOverIndex);
-    isJumpValid = currentPlayer === player1 ? middlePieceHtml === player2 : middlePieceHtml === player1;
+    if (currentPlayer === player1) {
+      isJumpValid = middlePieceHtml === player2
+    } else {
+      isJumpValid = middlePieceHtml === player1
+    }
   }
 
   const isTargetValid =
