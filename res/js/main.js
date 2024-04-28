@@ -27,11 +27,20 @@ board.addEventListener("click", function (e) {
     index[1] = [...board.children].indexOf(target);
     let previousPlayerTotal = [...playerTotal];
     if (from && isLegalMove(target)) {
+      const absDiff = Math.abs(index[0] - index[1]);
+      const isDiagonalJump = absDiff / 9 === 2 || absDiff / 7 === 2;
+      if (isDiagonalJump) {
+        const jumpOverIndex = Math.floor((index[0] + index[1]) / 2);
+        validatePlayer(jumpOverIndex);
+      }
       target.innerHTML = selected;
       from.innerHTML = "";
       from = null;
-      if (previousPlayerTotal[0] !== playerTotal[0] || previousPlayerTotal[1] !== playerTotal[1]) {
-        return; 
+      if (
+        previousPlayerTotal[0] !== playerTotal[0] ||
+        previousPlayerTotal[1] !== playerTotal[1]
+      ) {
+        return;
       }
       currentPlayer = currentPlayer === player1 ? player2 : player1;
     }
@@ -43,23 +52,26 @@ function isLegalMove() {
   const isDiagonalStep = absDiff / 9 === 1 || absDiff / 7 === 1;
   const isDiagonalJump = absDiff / 9 === 2 || absDiff / 7 === 2;
   const direction = index[1] - index[0];
-  const isMovingForward = (currentPlayer === player1 && direction < 0) || (currentPlayer === player2 && direction > 0);
+  const isMovingForward =
+    (currentPlayer === player1 && direction < 0) ||
+    (currentPlayer === player2 && direction > 0);
 
   let isJumpValid = false;
   if (isDiagonalJump) {
     const jumpOverIndex = Math.floor((index[0] + index[1]) / 2);
     const middlePieceHtml = board.children[jumpOverIndex].innerHTML;
-    if (currentPlayer === player1) {
-      isJumpValid = middlePieceHtml === player2
-    } else {
-      isJumpValid = middlePieceHtml === player1
+    if (middlePieceHtml !== "" && middlePieceHtml !== currentPlayer) {
+      isJumpValid = true;
     }
   }
 
-  const isTargetValid =
-    target.innerHTML === "" && target.classList.contains("white");
+  const isTargetValid = target.innerHTML === "" && target.classList.contains("white");
 
-    return isMovingForward && isTargetValid && (isDiagonalStep || (isDiagonalJump && isJumpValid));
+  return (
+    isMovingForward &&
+    isTargetValid &&
+    (isDiagonalStep || (isDiagonalJump && isJumpValid))
+  );
 }
 
 function validatePlayer(index) {
