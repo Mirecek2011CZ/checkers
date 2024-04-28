@@ -37,8 +37,7 @@ board.addEventListener("click", function (e) {
       from.innerHTML = "";
       from = null;
       if (
-        previousPlayerTotal[0] !== playerTotal[0] ||
-        previousPlayerTotal[1] !== playerTotal[1]
+        previousPlayerTotal[0] !== playerTotal[0] || previousPlayerTotal[1] !== playerTotal[1]
       ) {
         return;
       }
@@ -52,13 +51,11 @@ function isLegalMove() {
   const isDiagonalStep = absDiff / 9 === 1 || absDiff / 7 === 1;
   const isDiagonalJump = absDiff / 9 === 2 || absDiff / 7 === 2;
   const direction = index[1] - index[0];
-  const isMovingForward =
-    (currentPlayer === player1 && direction < 0) ||
-    (currentPlayer === player2 && direction > 0);
+  const isMovingForward = (currentPlayer === player1 && direction < 0) || (currentPlayer === player2 && direction > 0);
 
   let isJumpValid = false;
   if (isDiagonalJump) {
-    const jumpOverIndex = Math.floor((index[0] + index[1]) / 2);
+    const jumpOverIndex = (index[0] + index[1]) / 2;
     const middlePieceHtml = board.children[jumpOverIndex].innerHTML;
     if (middlePieceHtml !== "" && middlePieceHtml !== currentPlayer) {
       isJumpValid = true;
@@ -68,9 +65,7 @@ function isLegalMove() {
   const isTargetValid = target.innerHTML === "" && target.classList.contains("white");
 
   return (
-    isMovingForward &&
-    isTargetValid &&
-    (isDiagonalStep || (isDiagonalJump && isJumpValid))
+    isMovingForward && isTargetValid && (isDiagonalStep || (isDiagonalJump && isJumpValid))
   );
 }
 
