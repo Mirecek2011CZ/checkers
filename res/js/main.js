@@ -62,7 +62,8 @@ function isLegalMove() {
     }
   }
 
-  const isTargetValid = target.innerHTML === "" && target.classList.contains("white");
+  const isTargetValid =
+    target.innerHTML === "" && target.classList.contains("white");
 
   return (
     isMovingForward && isTargetValid && (isDiagonalStep || (isDiagonalJump && isJumpValid))
