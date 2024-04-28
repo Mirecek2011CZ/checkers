@@ -1,2 +1,2 @@
 # Checkers
-[view](https://mirecek2011cz.github.io/checkers/)
+[PLAY GAME](https://mirecek2011cz.github.io/checkers/)
